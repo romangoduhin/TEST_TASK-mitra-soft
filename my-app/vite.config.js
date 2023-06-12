@@ -8,6 +8,7 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src/"),
       "@services": `${path.resolve(__dirname, "./src/services/")}`,
+      "@redux": `${path.resolve(__dirname, "./src/redux/")}`,
     }
   }
 })
