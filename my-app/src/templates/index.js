@@ -1,3 +1,5 @@
 import {List} from "./List";
+import {Pagination} from "./Pagination";
+import {Loader} from "./Loader";
 
-export {List}
+export {List, Pagination, Loader}

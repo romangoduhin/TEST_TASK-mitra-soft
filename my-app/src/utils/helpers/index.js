@@ -1,3 +1,4 @@
 import {scrollToTop} from "./scrollToTop.js";
+import {isArrayEmpty} from "./isArrayEmpty.js";
 
-export {scrollToTop}
+export {scrollToTop, isArrayEmpty}
