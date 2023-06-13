@@ -4,10 +4,14 @@ import {PostBody} from "./PostBody";
 import {jsonPlaceholderApi} from "@services";
 import styles from "./Post.module.css";
 import {CommentsList} from "@components";
+import {useDebounce} from "@utils/hooks";
 
 export function Post({avatarUrl = avatar, title, text, postId}) {
   const [isCommentsVisible, setIsCommentsVisible] = useState(false);
+
   const [comments, setComments] = useState([]);
+
+  const delayedComments = useDebounce(comments, 2000);
 
   function handleCommentsClick() {
     setIsCommentsVisible(prevState => !prevState)
@@ -25,7 +29,6 @@ export function Post({avatarUrl = avatar, title, text, postId}) {
     }
   }, [isCommentsVisible]);
 
-
   return (
     <div className={styles.post}>
       <PostBody title={title}
@@ -33,7 +36,7 @@ export function Post({avatarUrl = avatar, title, text, postId}) {
                 avatarUrl={avatarUrl}
                 handleCommentsClick={handleCommentsClick}/>
 
-      {isCommentsVisible && <CommentsList list={comments}/>}
+      {isCommentsVisible && <CommentsList list={delayedComments}/>}
     </div>
   )
 }
