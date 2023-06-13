@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import avatar from "@assets/images/avatar.svg";
-import {PostBody} from "@components/Post/PostBody/index.js";
-import {PostAvatar} from "./PostAvatar/index.js";
+import {PostBody} from "./PostBody";
 import {jsonPlaceholderApi} from "@services";
 import styles from "./Post.module.css";
+import {CommentsList} from "@components";
 
 export function Post({avatarUrl = avatar, title, text, postId}) {
   const [isCommentsVisible, setIsCommentsVisible] = useState(false);
@@ -28,12 +28,12 @@ export function Post({avatarUrl = avatar, title, text, postId}) {
 
   return (
     <div className={styles.post}>
-      <PostAvatar avatarUrl={avatarUrl}/>
       <PostBody title={title}
                 text={text}
-                comments={comments}
-                isCommentsVisible={isCommentsVisible}
+                avatarUrl={avatarUrl}
                 handleCommentsClick={handleCommentsClick}/>
+
+      {isCommentsVisible && <CommentsList list={comments}/>}
     </div>
   )
 }
