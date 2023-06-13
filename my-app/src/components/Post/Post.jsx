@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Container} from "react-bootstrap";
 import avatar from "@assets/images/avatar.svg";
-import {PostBody} from "@components/Post/PostBody";
-import {PostHeader} from "@components/Post/PostHeader";
+import {PostBody} from "@components/Post/PostBody/index.js";
+import {PostAvatar} from "./PostAvatar/index.js";
 import {jsonPlaceholderApi} from "@services";
+import styles from "./Post.module.css";
 
 export function Post({avatarUrl = avatar, title, text, postId}) {
   const [isCommentsVisible, setIsCommentsVisible] = useState(false);
@@ -27,22 +27,13 @@ export function Post({avatarUrl = avatar, title, text, postId}) {
 
 
   return (
-    <Container style={{
-      padding: "10px",
-      width: "100%",
-      minHeight: "200px",
-      height: "100%",
-      display: "flex",
-      flexDirection: "row",
-      border: "1px solid blue",
-      borderRadius: "10px"
-    }}>
-      <PostHeader avatarUrl={avatarUrl}/>
+    <div className={styles.post}>
+      <PostAvatar avatarUrl={avatarUrl}/>
       <PostBody title={title}
                 text={text}
                 comments={comments}
                 isCommentsVisible={isCommentsVisible}
                 handleCommentsClick={handleCommentsClick}/>
-    </Container>
+    </div>
   )
 }

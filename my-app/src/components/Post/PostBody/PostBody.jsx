@@ -1,40 +1,18 @@
 import React from 'react';
+import styles from "./PostBody.module.css"
+import {CommentList} from "@components/CommentList/index.js";
 
-export function PostBody({title, text, comments, width = "80%", isCommentsVisible, handleCommentsClick}) {
+export function PostBody({title, text, comments, isCommentsVisible, handleCommentsClick}) {
   return (
-    <div style={{
-      width: width,
-      display: "flex",
-      flexDirection: "column",
-      textTransform: "capitalize",
-    }}>
-      <div style={{
-        width: "100%",
-        height: "80%",
-        display: "flex",
-        flexDirection: "column",
-      }}>
-        <h1 style={{margin: 0}}>{title}</h1>
-        <p style={{margin: 0}}>{text}</p>
+    <div className={styles.body}>
+      <div className={styles.main}>
+        <h1>{title}</h1>
+        <p>{text}</p>
       </div>
-      <p style={{
-        margin: 0,
-        width: "100%",
-        height: "20%",
-        display: "flex",
-        alignItems: "flex-end",
-        color: "blue",
-      }}
-         onClick={handleCommentsClick}
-      >Комментарии</p>
-      {isCommentsVisible && <div>
-        {comments.map(comment => (
-          <div key={comment.id}>
-            <h5>{comment.email}</h5>
-            <p>{comment.body}</p>
-          </div>))
-        }
-      </div>}
+      <span className={styles.commentariesButton} onClick={handleCommentsClick}>
+        Комментарии
+      </span>
+      {isCommentsVisible && <CommentList list={comments}/>}
     </div>
   )
 }

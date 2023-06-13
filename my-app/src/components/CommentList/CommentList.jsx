@@ -1,10 +1,10 @@
 import React from 'react';
-import {Post} from "@components/Post";
+import {Comment} from "@components/Comment"
 import {List} from "@templates/List";
 
-export function PostsList({list}) {
+export function CommentList({list}) {
   function renderItem(item) {
-    return <Post title={item.title} text={item.body} postId={item.id}/>
+    return <Comment email={item.email} text={item.body}/>
   }
 
   return (
