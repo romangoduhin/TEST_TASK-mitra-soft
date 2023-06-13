@@ -31,16 +31,26 @@ export function PostsPage() {
     dispatch(getPostsSagaAction())
   }, []);
 
-  if (isLoading) return <Loader/>
-
   return (
-    <Container fluid={true} style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-      <PostsList list={getCurrentPosts()}/>
-      <Pagination currentPage={currentPage}
-                  setCurrentPage={setCurrentPage}
-                  itemsPerPage={POSTS_PER_PAGE}
-                  totalCount={TOTAL_POSTS_COUNT}
-      />
+    <Container fluid={true} style={{
+      width: "100vw",
+      height: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center"
+    }}>
+      {
+        isLoading
+          ? <Loader/>
+          : <>
+            <PostsList list={getCurrentPosts()}/>
+            <Pagination currentPage={currentPage}
+                        setCurrentPage={setCurrentPage}
+                        itemsPerPage={POSTS_PER_PAGE}
+                        totalCount={TOTAL_POSTS_COUNT}
+            />
+          </>
+      }
     </Container>
   );
 }
