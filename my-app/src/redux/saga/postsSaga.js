@@ -1,15 +1,18 @@
 import {jsonPlaceholderApi} from "@services";
-import {getPosts} from "@redux/slices/postsSlice.js";
+import {getPostsFailed, getPostsRequest, getPostsSuccess} from "@redux/slices/postsSlice.js";
 import {put} from 'redux-saga/effects'
 
 export function* getPostsSaga() {
   try {
+    yield put(getPostsRequest())
+
     const payload = yield jsonPlaceholderApi.getPosts()
 
-    yield put(getPosts(payload))
+    yield put(getPostsSuccess(payload))
 
 
   } catch (err) {
-    console.log(err)
+    //@todo check it
+    yield put(getPostsFailed(err))
   }
 }

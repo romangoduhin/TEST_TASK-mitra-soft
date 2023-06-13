@@ -1,0 +1,27 @@
+.pageLayout {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+
+  header, main, footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header, footer {
+    display: flex;
+    flex-direction: column;
+    min-height: 10vh;
+  }
+
+  main {
+    height: auto;
+  }
+}

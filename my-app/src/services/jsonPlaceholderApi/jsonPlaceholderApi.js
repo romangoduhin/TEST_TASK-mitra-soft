@@ -1,4 +1,5 @@
 import axios from "axios";
+import {delayCallback} from "@utils/helpers/delayCallback.js";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com/"
 
@@ -9,7 +10,7 @@ const instance = axios.create({
 export const jsonPlaceholderApi = {
   getPosts: async () => {
     try {
-      const response = await instance.get(`/posts`)
+      const response = await delayCallback(() => instance.get(`/posts`), 500)
 
       return response.data;
     } catch (err) {
@@ -19,7 +20,7 @@ export const jsonPlaceholderApi = {
   },
   getComments: async (postId) => {
     try {
-      const response = await instance.get(`/posts/${postId}/comments`)
+      const response = await delayCallback(() => instance.get(`/posts/${postId}/comments`), 500)
 
       return response.data;
     } catch (err) {

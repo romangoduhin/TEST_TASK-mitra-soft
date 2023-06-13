@@ -4,7 +4,6 @@ import {Form} from 'react-bootstrap';
 export function SearchInput({value, setValue}) {
   function handleChange(event) {
     const value = event.target.value
-
     setValue(value)
   }
 
@@ -16,11 +15,7 @@ export function SearchInput({value, setValue}) {
         onChange={handleChange}
         type="text"
         id="search"
-        aria-describedby="searchHelpBlock"
       />
-      <Form.Text id="passwordHelpBlock" muted>
-        Your can looking for post by title
-      </Form.Text>
     </>
   );
 }
