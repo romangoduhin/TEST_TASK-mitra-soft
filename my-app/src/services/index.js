@@ -1,3 +1,3 @@
-import {jsonPlaceholderApi} from "./jsonPlaceholderApi/index.js";
+import {jsonPlaceholderApi} from "./jsonPlaceholderApi";
 
 export {jsonPlaceholderApi}

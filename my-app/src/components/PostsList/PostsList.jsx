@@ -1,16 +1,20 @@
 import React from 'react';
 import {Post} from "@components/Post";
-import {Row} from "react-bootstrap";
+import {ListGroup} from 'react-bootstrap';
 
 export function PostsList({list}) {
   return (
-    <Row className={"justify-content-around"}>
+    <ListGroup as="ul">
       {list.map(item => (
-        <Post key={item.id}
-              title={item.title}
-              text={item.body}
-        />
+        <ListGroup.Item key={item.id}
+                        as="li"
+                        style={{border: "none"}}
+        >
+          <Post title={item.title}
+                text={item.body}
+          />
+        </ListGroup.Item>
       ))}
-    </Row>
+    </ListGroup>
   );
 }
