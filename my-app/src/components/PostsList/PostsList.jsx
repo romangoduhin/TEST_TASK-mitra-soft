@@ -12,6 +12,7 @@ export function PostsList({list}) {
         >
           <Post title={item.title}
                 text={item.body}
+                postId={item.id}
           />
         </ListGroup.Item>
       ))}

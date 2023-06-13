@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function PostBody({title, text, width = "80%"}) {
+export function PostBody({title, text, comments, width = "80%", isCommentsVisible, handleCommentsClick}) {
   return (
     <div style={{
       width: width,
@@ -24,7 +24,17 @@ export function PostBody({title, text, width = "80%"}) {
         display: "flex",
         alignItems: "flex-end",
         color: "blue",
-      }}>Комментарии</p>
+      }}
+         onClick={handleCommentsClick}
+      >Комментарии</p>
+      {isCommentsVisible && <div>
+        {comments.map(comment => (
+          <div key={comment.id}>
+            <h5>{comment.email}</h5>
+            <p>{comment.body}</p>
+          </div>))
+        }
+      </div>}
     </div>
   )
 }
