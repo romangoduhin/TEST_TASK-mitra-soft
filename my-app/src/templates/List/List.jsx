@@ -8,10 +8,7 @@ export function List({list, renderItem, isLoading}) {
       {isLoading && <Loader/>}
 
       {list.map(item => (
-        <ListGroup.Item key={item.id}
-                        as="li"
-                        style={{border: 0}}
-        >
+        <ListGroup.Item key={item.id} as="li" style={{border: 0}}>
           {renderItem(item)}
         </ListGroup.Item>
       ))}

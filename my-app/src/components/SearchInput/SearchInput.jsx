@@ -1,5 +1,6 @@
 import React from 'react';
-import {Form} from 'react-bootstrap';
+import {CloseButton, Form} from 'react-bootstrap';
+import styles from "./SearchInput.module.scss";
 
 export function SearchInput({value, setValue}) {
   function handleChange(event) {
@@ -7,15 +8,20 @@ export function SearchInput({value, setValue}) {
     setValue(value)
   }
 
+  function handleClearInput() {
+    setValue('')
+  }
+
   return (
-    <>
-      <Form.Label htmlFor="search">Search</Form.Label>
+    <div className={styles.searchInput}>
       <Form.Control
         value={value}
         onChange={handleChange}
         type="text"
         id="search"
+        placeholder="Search by Title"
       />
-    </>
+      <CloseButton onClick={handleClearInput}/>
+    </div>
   );
 }
