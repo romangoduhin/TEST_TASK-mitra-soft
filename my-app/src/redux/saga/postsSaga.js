@@ -7,6 +7,8 @@ export function* getPostsSaga() {
     const payload = yield jsonPlaceholderApi.getPosts()
 
     yield put(getPosts(payload))
+
+
   } catch (err) {
     console.log(err)
   }
