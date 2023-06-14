@@ -1,5 +1,5 @@
 import axios from "axios";
-import {delayCallback} from "@utils/helpers";
+import {delayCallback} from "@helpers";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com/"
 

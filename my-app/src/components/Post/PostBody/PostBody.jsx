@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {Button, Col, Container, Image, Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 

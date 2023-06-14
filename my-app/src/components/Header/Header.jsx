@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import {Button, Col, Container, Image, Row} from "react-bootstrap";
-import menuIconUrl from "@assets/icons/menuIcon.svg";
-import {MY_AVATAR_URL, MY_EMAIL, MY_FULL_NAME} from "@utils/constants.js";
+import menuIconUrl from "@icons/menuIcon.svg";
+import {MY_AVATAR_URL, MY_EMAIL, MY_FULL_NAME} from "@constants";
 import {NavLink} from "react-router-dom";
 
 export function Header({handleOpenMenu}) {

@@ -7,7 +7,7 @@ const initialState = {
 }
 
 export const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     getPostsRequest: (state) => {

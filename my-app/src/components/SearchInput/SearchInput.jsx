@@ -1,5 +1,5 @@
-import React from 'react';
-import {CloseButton, Container, Form} from 'react-bootstrap';
+import React from "react";
+import {CloseButton, Container, Form} from "react-bootstrap";
 
 export function SearchInput({value, setValue}) {
   function handleChange(event) {
@@ -8,7 +8,7 @@ export function SearchInput({value, setValue}) {
   }
 
   function handleClearInput() {
-    setValue('')
+    setValue("")
   }
 
   return (

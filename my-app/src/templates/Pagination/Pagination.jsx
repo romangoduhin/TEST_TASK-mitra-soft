@@ -1,6 +1,6 @@
-import React from 'react';
-import {Pagination as BootstrapPagination} from 'react-bootstrap';
-import {scrollToTop} from "@utils/helpers/index.js";
+import React from "react";
+import {Pagination as BootstrapPagination} from "react-bootstrap";
+import {scrollToTop} from "@helpers";
 
 export function Pagination({currentPage, setCurrentPage, itemsPerPage, totalCount}) {
   const totalPages = Math.ceil(totalCount / itemsPerPage);

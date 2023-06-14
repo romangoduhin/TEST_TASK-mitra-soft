@@ -1,6 +1,6 @@
 import {jsonPlaceholderApi} from "@services";
-import {put} from 'redux-saga/effects'
-import {getProfileFailed, getProfileRequest, getProfileSuccess} from "@redux/slices/profileSlice.js";
+import {put} from "redux-saga/effects";
+import {getProfileFailed, getProfileRequest, getProfileSuccess} from "../slices/profileSlice.js";
 
 export function* getProfileSaga({payload}) {
   try {

@@ -1,3 +1,1 @@
-import {AlertContext, AlertProvider} from "./AlertContext";
-
-export {AlertContext, AlertProvider}
+export * from "./AlertContext"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {Comment} from "@components"
 import {List} from "@templates";
 

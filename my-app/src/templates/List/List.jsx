@@ -1,7 +1,7 @@
-import React from 'react';
-import {ListGroup} from 'react-bootstrap';
+import React from "react";
+import {ListGroup} from "react-bootstrap";
 import {EmptyContent, Loader} from "@templates";
-import {isArrayEmpty} from "@utils/helpers/index.js";
+import {isArrayEmpty} from "@helpers";
 
 export function List({list, renderItem, isLoading}) {
   if (isArrayEmpty(list) && !isLoading) return <EmptyContent/>

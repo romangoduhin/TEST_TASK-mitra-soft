@@ -1,5 +1,5 @@
-import React from 'react';
-import {Container, Spinner} from 'react-bootstrap';
+import React from "react";
+import {Container, Spinner} from "react-bootstrap";
 import styles from "./Loader.module.css"
 
 export function Loader() {

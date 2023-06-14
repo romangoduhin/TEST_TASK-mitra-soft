@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {Card, Offcanvas} from "react-bootstrap";
 import {List} from "@templates";
 import {NavLink} from "react-router-dom";

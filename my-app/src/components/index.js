@@ -1,9 +1,9 @@
-import {PostsList} from "./PostsList";
-import {CommentsList} from "./CommentsList";
-import {Post} from "./Post";
 import {Comment} from "./Comment";
+import {CommentsList} from "./CommentsList";
+import {Header} from "./Header";
+import {Post} from "./Post";
+import {PostsList} from "./PostsList";
 import {SearchInput} from "./SearchInput";
 import {SortingPanel} from "./SortingPanel";
-import {Header} from "./Header";
 
-export {PostsList, CommentsList, Post, Comment, SearchInput, SortingPanel, Header}
+export {Comment, CommentsList, Header, Post, PostsList, SearchInput, SortingPanel}

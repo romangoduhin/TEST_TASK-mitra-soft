@@ -1,6 +1,6 @@
-import React from 'react';
-import {Post} from "@components/Post";
-import {List} from "@templates/List";
+import React from "react";
+import {Post} from "@components";
+import {List} from "@templates";
 
 export function PostsList({list}) {
   function renderItem(item) {

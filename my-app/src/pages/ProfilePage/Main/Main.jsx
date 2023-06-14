@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {Card, Col, Container, Image, Row} from "react-bootstrap";
 import avatarUrl from "@assets/images/avatar.svg";
 import {NavLink} from "react-router-dom";

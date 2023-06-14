@@ -1,7 +1,7 @@
-import {takeEvery} from 'redux-saga/effects'
-import {getPostsSaga} from "@redux/saga/postsSaga.js";
-import {sagaActions} from "@redux/saga/sagaActions.js";
-import {getProfileSaga} from "@redux/saga/profileSaga.js";
+import {takeEvery} from "redux-saga/effects";
+import {getPostsSaga} from "./postsSaga.js";
+import {sagaActions} from "./sagaActions.js";
+import {getProfileSaga} from "./profileSaga.js";
 
 export default function* rootSaga() {
   yield takeEvery(sagaActions.GET_POSTS, getPostsSaga)

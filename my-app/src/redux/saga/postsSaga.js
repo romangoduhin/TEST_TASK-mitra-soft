@@ -1,6 +1,6 @@
 import {jsonPlaceholderApi} from "@services";
-import {getPostsFailed, getPostsRequest, getPostsSuccess} from "@redux/slices/postsSlice.js";
-import {put} from 'redux-saga/effects'
+import {getPostsFailed, getPostsRequest, getPostsSuccess} from "../slices/postsSlice.js";
+import {put} from "redux-saga/effects";
 
 export function* getPostsSaga() {
   try {

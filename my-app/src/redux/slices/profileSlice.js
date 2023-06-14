@@ -8,7 +8,7 @@ const initialState = {
 }
 
 export const profileSlice = createSlice({
-  name: 'profile',
+  name: "profile",
   initialState,
   reducers: {
     getProfileRequest: (state) => {

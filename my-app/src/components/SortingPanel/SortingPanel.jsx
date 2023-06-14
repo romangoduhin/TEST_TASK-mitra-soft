@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {Button, ButtonGroup} from "react-bootstrap";
-import {ASCENDING_MODE, DEFAULT_MODE, DESCENDING_MODE} from "@utils/constants.js";
+import {ASCENDING_MODE, DEFAULT_MODE, DESCENDING_MODE} from "@constants";
 
 const buttons = [
-  {text: 'Ascending', value: ASCENDING_MODE},
-  {text: 'Default', value: DEFAULT_MODE},
-  {text: 'Descending', value: DESCENDING_MODE},
+  {text: "Ascending", value: ASCENDING_MODE},
+  {text: "Default", value: DEFAULT_MODE},
+  {text: "Descending", value: DESCENDING_MODE},
 ]
 
 export function SortingPanel({value, setValue}) {

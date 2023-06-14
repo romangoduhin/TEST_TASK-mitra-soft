@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import {Container, Image} from "react-bootstrap";
-import {DEFAULT_EMPTY_CONTENT_TEXT} from "@utils/constants.js";
-import emptyContentUrl from "@assets/images/emptyContent.svg";
+import {DEFAULT_EMPTY_CONTENT_TEXT} from "@constants";
+import emptyContentUrl from "@images/emptyContent.svg";
 
 export function EmptyContent({text = DEFAULT_EMPTY_CONTENT_TEXT}) {
   return (

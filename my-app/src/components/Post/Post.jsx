@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from "react";
 import avatar from "@assets/images/avatar.svg";
 import {PostBody} from "./PostBody";
 import {jsonPlaceholderApi} from "@services";
 import {CommentsList} from "@components";
-import {isArrayEmpty} from "@utils/helpers";
+import {isArrayEmpty} from "@helpers";
 import {Card} from "react-bootstrap";
 
 export function Post({userId, avatarUrl = avatar, title, text, postId}) {

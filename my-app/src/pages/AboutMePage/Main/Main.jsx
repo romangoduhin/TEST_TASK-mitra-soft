@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {Card, Col, Container, ListGroup, Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 
@@ -13,7 +13,7 @@ export function Main() {
                 <NavLink to={"/posts"} className={"text-primary text-decoration-underline"}>Go back</NavLink>
               </Card.Title>
               <Card.Title>
-                <h1 className={"text-primary"}>Мой слоган: "Был бы дизайн сделал лучше :)"</h1>
+                <h1 className={"text-primary"}>"Был бы дизайн, сделал бы лучше :)"</h1>
               </Card.Title>
               <ListGroup>
                 <ListGroup.Item>- Имею годовой коммерческий опыт работы в американском финтех стартапе на стеке React

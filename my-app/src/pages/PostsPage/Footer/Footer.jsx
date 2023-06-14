@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {Pagination} from "@templates";
 
 export function Footer({currentPage, setCurrentPage, itemsPerPage, totalCount}) {

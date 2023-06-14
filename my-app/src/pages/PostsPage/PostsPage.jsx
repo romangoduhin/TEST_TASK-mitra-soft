@@ -1,11 +1,11 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getPostsSagaAction} from "@redux/saga/sagaActions.js";
 import {PageLayout} from "@templates";
-import {DEFAULT_MODE, KEY_FOR_FILTER, KEY_FOR_SORT, POSTS_PER_PAGE} from "@utils/constants.js";
-import {filterObjectsByValue, sortObjectsByOrder} from "@utils/helpers";
-import {Main} from "@pages/PostsPage/Main/index.js";
-import {Footer} from "@pages/PostsPage/Footer/index.js";
+import {DEFAULT_MODE, KEY_FOR_FILTER, KEY_FOR_SORT, POSTS_PER_PAGE} from "@constants";
+import {filterObjectsByValue, sortObjectsByOrder} from "@helpers";
+import {Main} from "./Main";
+import {Footer} from "./Footer";
 import {AlertContext} from "@context";
 
 export function PostsPage() {
@@ -17,7 +17,7 @@ export function PostsPage() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [sortMode, setSortMode] = useState(DEFAULT_MODE);
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
 
   const filteredPosts = filterObjectsByValue(posts, searchValue, KEY_FOR_FILTER)
 
@@ -31,7 +31,7 @@ export function PostsPage() {
 
     return sortedPosts.slice(startIndex, endIndex);
   }
-  
+
   useEffect(() => {
     if (errorMessage) {
       showAlert(errorMessage)

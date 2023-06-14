@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 import {Loader, SideMenu} from "@templates";
 import {Container, Stack} from "react-bootstrap";
 import {Header} from "@components";
