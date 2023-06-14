@@ -27,5 +27,25 @@ export const jsonPlaceholderApi = {
       //@todo show Alert on it
       console.log('Error', err)
     }
+  },
+  getPostsByUserId: async (userId) => {
+    try {
+      const response = await delayCallback(() => instance.get(`/users/${userId}/posts`), 500)
+
+      return response.data;
+    } catch (err) {
+      //@todo show Alert on it
+      console.log('Error', err)
+    }
+  },
+  getProfile: async (userId) => {
+    try {
+      const response = await delayCallback(() => instance.get(`/users/${userId}`), 500)
+
+      return response.data;
+    } catch (err) {
+      //@todo show Alert on it
+      console.log('Error', err)
+    }
   }
 }
