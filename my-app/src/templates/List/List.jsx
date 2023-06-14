@@ -1,8 +1,11 @@
 import React from 'react';
 import {ListGroup} from 'react-bootstrap';
-import {Loader} from "@templates";
+import {EmptyContent, Loader} from "@templates";
+import {isArrayEmpty} from "@utils/helpers/index.js";
 
 export function List({list, renderItem, isLoading}) {
+  if (isArrayEmpty(list) && !isLoading) return <EmptyContent/>
+
   return (
     <ListGroup className={"p-0 m-0"} as="ul">
       {isLoading && <Loader/>}

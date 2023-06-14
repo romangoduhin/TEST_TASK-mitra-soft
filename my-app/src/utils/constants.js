@@ -11,3 +11,5 @@ export const MY_AVATAR_URL = "https://media.licdn.com/dms/image/D4D35AQHtxZhj_G2
 export const MY_FULL_NAME = "Roman Goduhin";
 export const MY_EMAIL = "superchewits2000@gmail.com";
 
+export const DEFAULT_EMPTY_CONTENT_TEXT = "Nothing To Show";
+
