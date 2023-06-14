@@ -13,10 +13,7 @@ export function* getProfileSaga({payload}) {
     const posts = yield jsonPlaceholderApi.getPostsByUserId(userId)
 
     yield put(getProfileSuccess({profile, posts}))
-
-
   } catch (err) {
-    //@todo check it
     yield put(getProfileFailed(err))
   }
 }

@@ -3,7 +3,7 @@ import {Loader, SideMenu} from "@templates";
 import {Container, Stack} from "react-bootstrap";
 import {Header} from "@components";
 
-export function PageLayout({isLoading, header, main, footer}) {
+export function PageLayout({isLoading, main, footer}) {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   function handleClickMenu() {
@@ -16,17 +16,14 @@ export function PageLayout({isLoading, header, main, footer}) {
         ? <Loader/>
         : <Stack gap={2}>
           <header>
-            {header
-              ? header
-              : <Header handleOpenMenu={handleClickMenu}/>
-            }
+            <Header handleOpenMenu={handleClickMenu}/>
           </header>
-          <main>
+          {main && <main>
             {main}
-          </main>
-          <footer>
+          </main>}
+          {footer && <footer>
             {footer}
-          </footer>
+          </footer>}
         </Stack>
       }
       <SideMenu isVisible={isMenuVisible} onHide={handleClickMenu}/>

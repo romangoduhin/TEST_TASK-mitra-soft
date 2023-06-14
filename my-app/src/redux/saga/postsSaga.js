@@ -6,13 +6,10 @@ export function* getPostsSaga() {
   try {
     yield put(getPostsRequest())
 
-    const payload = yield jsonPlaceholderApi.getPosts()
+    const response = yield jsonPlaceholderApi.getPosts()
 
-    yield put(getPostsSuccess(payload))
-
-
+    yield put(getPostsSuccess(response))
   } catch (err) {
-    //@todo check it
     yield put(getPostsFailed(err))
   }
 }

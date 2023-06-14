@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
   posts: [],
   isLoading: false,
-  error: null,
+  errorMessage: null,
 }
 
 export const postsSlice = createSlice({
@@ -13,18 +13,17 @@ export const postsSlice = createSlice({
     getPostsRequest: (state) => {
       state.posts = []
       state.isLoading = true
-      state.error = null
+      state.errorMessage = null
     },
     getPostsSuccess: (state, action) => {
       state.posts = action.payload
       state.isLoading = false
-      state.error = null
+      state.errorMessage = null
     },
     getPostsFailed: (state, action) => {
-      //@todo check it
       state.posts = []
       state.isLoading = false
-      state.error = action.payload
+      state.errorMessage = action.payload.message
     },
   },
 })

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {getPostsSagaAction} from "@redux/saga/sagaActions.js";
 import {PageLayout} from "@templates";
@@ -6,11 +6,14 @@ import {DEFAULT_MODE, KEY_FOR_FILTER, KEY_FOR_SORT, POSTS_PER_PAGE} from "@utils
 import {filterObjectsByValue, sortObjectsByOrder} from "@utils/helpers";
 import {Main} from "@pages/PostsPage/Main/index.js";
 import {Footer} from "@pages/PostsPage/Footer/index.js";
+import {AlertContext} from "@context";
 
 export function PostsPage() {
   const dispatch = useDispatch();
 
-  const {posts, isLoading} = useSelector(state => state.posts)
+  const showAlert = useContext(AlertContext);
+
+  const {posts, errorMessage, isLoading} = useSelector(state => state.posts)
 
   const [currentPage, setCurrentPage] = useState(1);
   const [sortMode, setSortMode] = useState(DEFAULT_MODE);
@@ -28,6 +31,12 @@ export function PostsPage() {
 
     return sortedPosts.slice(startIndex, endIndex);
   }
+  
+  useEffect(() => {
+    if (errorMessage) {
+      showAlert(errorMessage)
+    }
+  }, [errorMessage]);
 
   useEffect(() => {
     dispatch(getPostsSagaAction())

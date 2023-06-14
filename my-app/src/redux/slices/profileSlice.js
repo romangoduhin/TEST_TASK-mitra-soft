@@ -4,7 +4,7 @@ const initialState = {
   profile: null,
   posts: [],
   isLoading: false,
-  error: null,
+  errorMessage: null,
 }
 
 export const profileSlice = createSlice({
@@ -15,20 +15,19 @@ export const profileSlice = createSlice({
       state.profile = null
       state.posts = []
       state.isLoading = true
-      state.error = null
+      state.errorMessage = null
     },
     getProfileSuccess: (state, action) => {
       state.profile = action.payload.profile
       state.posts = action.payload.posts
       state.isLoading = false
-      state.error = null
+      state.errorMessage = null
     },
     getProfileFailed: (state, action) => {
-      //@todo check it
       state.profile = null
       state.posts = []
       state.isLoading = false
-      state.error = action.payload
+      state.errorMessage = action.payload.message
     },
   },
 })

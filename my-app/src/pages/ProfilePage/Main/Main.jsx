@@ -1,9 +1,13 @@
 import React from 'react';
 import {Card, Col, Container, Image, Row} from "react-bootstrap";
-import avatar from "@assets/images/avatar.svg";
+import avatarUrl from "@assets/images/avatar.svg";
 import {NavLink} from "react-router-dom";
+import {EmptyContent} from "@templates";
+import {PostsList} from "@components";
 
-export function Main({profile}) {
+export function Main({posts, profile}) {
+  if (!profile) return <EmptyContent/>
+
   return (
     <Container fluid={true}>
       <Row className="justify-content-center">
@@ -13,7 +17,7 @@ export function Main({profile}) {
               <Card.Title>
                 <NavLink to={"/posts"} className={"text-primary text-decoration-underline"}>Go back</NavLink>
               </Card.Title>
-              <Image width={"100%"} height={300} src={avatar}/>
+              <Image width={"100%"} height={300} src={avatarUrl}/>
               <Card.Title>
                 <h1 className={"text-primary"}>{profile?.username}</h1>
               </Card.Title>
@@ -36,6 +40,8 @@ export function Main({profile}) {
           </Card>
         </Col>
       </Row>
+
+      <PostsList list={posts}/>
     </Container>
   )
 }
