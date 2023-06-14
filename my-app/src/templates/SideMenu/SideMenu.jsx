@@ -5,10 +5,12 @@ import {NavLink} from "react-router-dom";
 
 const links = [
   {
+    id: 1,
     title: "Posts",
     path: "/posts"
   },
   {
+    id: 2,
     title: "About me",
     path: "/about-me"
   },
