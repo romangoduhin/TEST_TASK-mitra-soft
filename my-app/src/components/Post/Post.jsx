@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import avatar from "@assets/images/avatar.svg";
 import {PostBody} from "./PostBody";
 import {jsonPlaceholderApi} from "@services";
-import styles from "./Post.module.scss";
 import {CommentsList} from "@components";
-import {isArrayEmpty} from "@utils/helpers/index.js";
+import {isArrayEmpty} from "@utils/helpers";
+import {Card} from "react-bootstrap";
 
 export function Post({avatarUrl = avatar, title, text, postId}) {
   const [isCommentsVisible, setIsCommentsVisible] = useState(false);
@@ -30,13 +30,15 @@ export function Post({avatarUrl = avatar, title, text, postId}) {
   }, [isCommentsVisible]);
 
   return (
-    <div className={styles.post}>
+    <Card className={"border-primary border-2"}>
       <PostBody title={title}
                 text={text}
                 avatarUrl={avatarUrl}
-                handleCommentsClick={handleCommentsClick}/>
+                isCommentsVisible={isCommentsVisible}
+                handleCommentsClick={handleCommentsClick}
+      />
 
       {isCommentsVisible && <CommentsList list={comments} isLoading={isLoading}/>}
-    </div>
+    </Card>
   )
 }

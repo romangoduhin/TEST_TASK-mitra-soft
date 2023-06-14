@@ -1,11 +1,11 @@
 import React from 'react';
-import {Spinner} from 'react-bootstrap';
-import styles from "./Loader.module.scss";
+import {Container, Spinner} from 'react-bootstrap';
+import styles from "./Loader.module.css"
 
 export function Loader() {
   return (
-    <div className={styles.loader}>
-      <Spinner animation="border"/>
-    </div>
+    <Container className={`${styles.customContainer} d-flex justify-content-center align-items-center`}>
+      <Spinner variant="success" animation="border"/>
+    </Container>
   )
 }

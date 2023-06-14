@@ -29,7 +29,7 @@ export function Pagination({currentPage, setCurrentPage, itemsPerPage, totalCoun
   }
 
   return (
-    <BootstrapPagination>
+    <BootstrapPagination className={"d-flex justify-content-center"}>
       {renderPaginationItems()}
     </BootstrapPagination>
   )

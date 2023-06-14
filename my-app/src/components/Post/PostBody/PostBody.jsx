@@ -1,26 +1,30 @@
 import React from 'react';
-import styles from "./PostBody.module.scss"
-import {Image} from "react-bootstrap";
+import {Button, Col, Container, Image, Row} from "react-bootstrap";
 
-export function PostBody({title, text, avatarUrl, handleCommentsClick}) {
+export function PostBody({title, text, avatarUrl, isCommentsVisible, handleCommentsClick}) {
+  const buttonText = isCommentsVisible ? "Close comments" : "Open comments"
+
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.avatar}>
-        <Image roundedCircle={true} variant="top" src={avatarUrl}/>
-      </div>
+    <Container>
+      <Row className={"p-2"}>
+        <Col sm={4} className={"d-flex justify-content-center align-items-center"}>
+          <Image className={"bg-primary"} width={"100px"} height={"100px"} roundedCircle={true} src={avatarUrl}/>
+        </Col>
 
-      <div className={styles.body}>
-        <div className={styles.main}>
-          <h1>{title}</h1>
-          <p>{text}</p>
-        </div>
+        <Col sm={8}>
+          <Row className={"text-capitalize"}>
+            <h1 className={"text-primary"}>{title}</h1>
+            <p>{text}</p>
+          </Row>
 
-        <div className={styles.footer}>
-            <span className={styles.commentariesButton} onClick={handleCommentsClick}>
-               Комментарии
-            </span>
-        </div>
-      </div>
-    </div>
+          <Row className={"p-2"}>
+            <Button className={`w-auto border-0 ${isCommentsVisible ? "bg-danger" : "bg-primary"}`}
+                    onClick={handleCommentsClick}>
+              {buttonText}
+            </Button>
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   )
 }

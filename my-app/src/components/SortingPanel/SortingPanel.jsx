@@ -1,7 +1,6 @@
 import React from 'react';
 import {Button, ButtonGroup} from "react-bootstrap";
 import {ASCENDING_MODE, DEFAULT_MODE, DESCENDING_MODE} from "@utils/constants.js";
-import styles from "./SortingPanel.module.scss";
 
 const buttons = [
   {text: 'Ascending', value: ASCENDING_MODE},
@@ -15,17 +14,15 @@ export function SortingPanel({value, setValue}) {
   }
 
   return (
-    <div className={styles.sortingPanel}>
-      <ButtonGroup>
-        {buttons.map(button => (
-          <Button key={button.value}
-                  value={button.value}
-                  active={value === button.value}
-                  onClick={(event) => handleClick(event)}>
-            {button.text}
-          </Button>
-        ))}
-      </ButtonGroup>
-    </div>
+    <ButtonGroup className={"w-100"}>
+      {buttons.map(button => (
+        <Button key={button.value}
+                value={button.value}
+                active={value === button.value}
+                onClick={(event) => handleClick(event)}>
+          {button.text}
+        </Button>
+      ))}
+    </ButtonGroup>
   );
 }

@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from "./Comment.module.css";
+import {Row} from "react-bootstrap";
 
 export function Comment({email, text}) {
   return (
-    <div className={styles.comment}>
-      <h5>{email}</h5>
+    <Row>
+      <h5 className={"text-primary text-decoration-underline"}>{email}</h5>
       <p>{text}</p>
-    </div>
+    </Row>
   )
 }

@@ -4,11 +4,11 @@ import {Loader} from "@templates";
 
 export function List({list, renderItem, isLoading}) {
   return (
-    <ListGroup as="ul">
+    <ListGroup className={"p-0 m-0"} as="ul">
       {isLoading && <Loader/>}
 
       {list.map(item => (
-        <ListGroup.Item key={item.id} as="li" style={{border: 0}}>
+        <ListGroup.Item className={"p-2 border-0"} key={item.id} as="li">
           {renderItem(item)}
         </ListGroup.Item>
       ))}

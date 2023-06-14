@@ -4,7 +4,6 @@ import {getPostsSagaAction} from "@redux/saga/sagaActions.js";
 import {PageLayout} from "@templates";
 import {DEFAULT_MODE, KEY_FOR_FILTER, KEY_FOR_SORT, POSTS_PER_PAGE} from "@utils/constants.js";
 import {filterObjectsByValue, sortObjectsByOrder} from "@utils/helpers";
-import {Header} from "@pages/PostsPage/Header/index.js";
 import {Main} from "@pages/PostsPage/Main/index.js";
 import {Footer} from "@pages/PostsPage/Footer/index.js";
 
@@ -36,12 +35,12 @@ export function PostsPage() {
 
   return <PageLayout
     isLoading={isLoading}
-    header={<Header searchValue={searchValue}
-                    setSearchValue={setSearchValue}
-                    sortMode={sortMode}
-                    setSortMode={setSortMode}
+    main={<Main list={getCurrentPosts()}
+                searchValue={searchValue}
+                setSearchValue={setSearchValue}
+                sortMode={sortMode}
+                setSortMode={setSortMode}
     />}
-    main={<Main list={getCurrentPosts()}/>}
     footer={<Footer currentPage={currentPage}
                     setCurrentPage={setCurrentPage}
                     itemsPerPage={POSTS_PER_PAGE}
